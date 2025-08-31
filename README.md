@@ -10,13 +10,13 @@
 `grb` (short for **grab**) is a **terminal-based smart clipboard & snippet manager** for Windows.  
 Unlike the default clipboard (which only stores the last copied item), `grb` lets you:
 
-- Save, search, and reuse snippets
-- Tag, pin, and alias snippets
-- Launch an interactive TUI (like `fzf`)
-- Auto-copy on save
-- Edit snippets in your default editor
-- Track usage stats
-- Run as a clipboard daemon (auto-capture everything you copy)
+- Save, search, and reuse snippets  
+- Tag, pin, and alias snippets  
+- Launch an interactive TUI (like `fzf`)  
+- Auto-copy on save  
+- Edit snippets in your default editor  
+- Track usage stats  
+- Run as a clipboard daemon (auto-capture everything you copy)  
 
 ---
 
@@ -31,7 +31,7 @@ Unlike the default clipboard (which only stores the last copied item), `grb` let
 - ✔ Show usage stats (most used snippets, tags, total count)  
 - ✔ Clipboard daemon mode (capture everything you copy)  
 - ✔ Interactive TUI mode (fuzzy search, arrow key navigation)  
-- ✔ Data persists across restarts (stored in `%APPDATA%/grb`)
+- ✔ Data persists across restarts (stored in `%APPDATA%/grb`)  
 
 ---
 
@@ -45,9 +45,7 @@ go mod tidy
 go build -o grb.exe
 ```
 
-This creates a `grb.exe` in the folder.
-
-Move it to your PATH for global usage:
+Move `grb.exe` to a folder in your PATH for global usage:  
 ```bash
 move grb.exe C:\Users\<YourName>\bin\
 ```
@@ -62,53 +60,27 @@ move grb.exe C:\Users\<YourName>\bin\
 
 ---
 
-## ⚡ Usage Examples
+## ⚡ Commands & Usage  
 
-### Save a snippet
-```bash
-grb save "git push origin main" --tag git --alias push
-```
-
-### List snippets
-```bash
-grb list
-```
-
-### Search
-```bash
-grb search git
-```
-
-### Copy snippet
-```bash
-grb copy 3
-grb copy push
-```
-
-### Pin & Edit
-```bash
-grb pin 3
-grb edit 3
-```
-
-### Stats
-```bash
-grb stats
-```
-
-### Daemon Mode
-```bash
-grb daemon
-```
-
-### Interactive TUI
-```bash
-grb
-```
+| Command | Example | Description |
+|---------|----------|-------------|
+| **Save a snippet** | `grb save "git push origin main" --tag git --alias push` | Saves a snippet with a tag and alias. Automatically copies it to clipboard. |
+| **List snippets** | `grb list` | Lists all snippets in a table (📌 pinned appear first). |
+| **Search snippets** | `grb search git` | Finds snippets by text, tag, or alias. |
+| **Copy snippet** | `grb copy 3` <br> `grb copy push` | Copies snippet by ID or alias back into clipboard. |
+| **Pin snippet** | `grb pin 3` | Pins snippet so it always shows at the top of list. |
+| **Edit snippet** | `grb edit 3` | Opens snippet in your default editor (Notepad, Nano, etc.). |
+| **Update alias** | `grb alias 3 deploy` | Updates alias of a snippet. |
+| **Delete snippet** | `grb delete 3` | Deletes snippet by ID or alias. |
+| **Clear snippets** | `grb clear --all` <br> `grb clear --tag git` <br> `grb clear --unpinned` | Deletes all snippets, by tag, or only unpinned ones. |
+| **Stats** | `grb stats` | Shows usage stats: total snippets, most used, top tags. |
+| **Daemon mode** | `grb daemon` | Runs in background and auto-saves every copied text. |
+| **Interactive TUI** | `grb` | Launches full-screen fuzzy search UI (like `fzf`). |
+| **Help** | `grb help` | Shows all available commands and examples. |
 
 ---
 
-## 📊 Example Output
+## 📊 Example Output  
 
 ```bash
 ✔ Saved snippet [3]
@@ -123,7 +95,7 @@ ID   Snippet                     Tag      Alias
 ---
 
 ## 🛠 Development
-If you want to contribute:
+If you want to contribute:  
 ```bash
 git clone https://github.com/ShubhmDalvi/grb.git
 cd grb
