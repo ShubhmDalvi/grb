@@ -57,7 +57,15 @@ move grb.exe C:\Users\<YourName>\bin\
 ```bash
 .\grb.exe help
 ```
+---
+### 3. Build with `build.bat` (Easy Mode)  
+If you just want to build locally without typing Go commands:  
 
+1. Make sure **Go is installed** on your system and available in PATH.  
+2. Simply double-click or run:  
+```bash
+build.bat
+```
 ---
 
 ## ⚡ Commands & Usage  
